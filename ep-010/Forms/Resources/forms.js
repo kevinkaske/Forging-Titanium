@@ -5,6 +5,7 @@ exports.STYLE_LABEL = 'label';
 exports.TYPE_DATE = 'date';
 exports.TYPE_EMAIL = 'email';
 exports.TYPE_NUMBER = 'number';
+exports.TYPE_NUMBER_DECIMAL = 'number_decimal';
 exports.TYPE_PASSWORD = 'password';
 exports.TYPE_PHONE = 'phone';
 exports.TYPE_PICKER = 'picker';
@@ -22,6 +23,7 @@ var textFieldDefaults = {
 var keyboardMap = {};
 keyboardMap[exports.TYPE_EMAIL] = Ti.UI.KEYBOARD_EMAIL;
 keyboardMap[exports.TYPE_NUMBER] = Ti.UI.KEYBOARD_NUMBER_PAD;
+keyboardMap[exports.TYPE_NUMBER_DECIMAL] = Ti.UI.KEYBOARD_DECIMAL_PAD;
 keyboardMap[exports.TYPE_PASSWORD] = Ti.UI.KEYBOARD_DEFAULT;
 keyboardMap[exports.TYPE_PHONE] = Ti.UI.KEYBOARD_NUMBER_PAD;
 keyboardMap[exports.TYPE_TEXT] = Ti.UI.KEYBOARD_DEFAULT;
@@ -78,6 +80,7 @@ var addField = function(field, fieldRefs) {
 	if (type === exports.TYPE_TEXT ||
 		type === exports.TYPE_EMAIL ||
 		type === exports.TYPE_NUMBER ||
+		type === exports.TYPE_NUMBER_DECIMAL ||
 		type === exports.TYPE_PHONE ||
 		type === exports.TYPE_PASSWORD) {
 		fieldObject = Ti.UI.createTextField(textFieldDefaults);
